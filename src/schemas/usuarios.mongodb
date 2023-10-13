@@ -1,0 +1,32 @@
+use("web_gestion");
+
+db.createCollection("usuarios", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["_id", "nombre_usuario", "contrasennia_usuario", "fecha_insercion", "estado"],
+            additionalProperties: false,
+            properties: {
+                _id: {
+                    bsonType: "objectId"
+                },
+                nombre_usuario: {
+                    bsonType: "string",
+                    maxLength: 25,
+                    minLength: 4
+                },
+                contrasennia_usuario: {
+                    bsonType: "string"
+                },
+                fecha_insercion: {
+                    bsonType: "date"
+                },
+                estado: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 1
+                }
+            }
+        }
+    }
+});
