@@ -1,0 +1,28 @@
+use("web_gestion");
+
+db.getCollection("marcas", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["_id", "descrip_marca", "fecha_insercion", "estado"],
+            additionalProperties: false,
+            properties: {
+                _id: {
+                    bsonType: "objectId"
+                },
+                descrip_marca: {
+                    bsonType: "string",
+                    maxLength: 35
+                },
+                fecha_insercion: {
+                    bsonType: "date"
+                },
+                estado: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 1
+                }
+            }
+        }
+    }
+});
