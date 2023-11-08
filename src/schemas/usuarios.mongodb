@@ -18,6 +18,9 @@ db.createCollection("usuarios", {
                 contrasennia_usuario: {
                     bsonType: "string"
                 },
+                tipo: {
+                    bsonType: "string"
+                },
                 fecha_insercion: {
                     bsonType: "date"
                 },
