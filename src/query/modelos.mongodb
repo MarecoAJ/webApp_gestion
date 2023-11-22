@@ -1,31 +1,8 @@
 use("web_gestion");
-
-db.getCollection("modelos", {
-    validator: {
-        $jsonSchema: {
-            bsonType: "object",
-            required: ["_id", "descrip_modelo", "marca_id", "fecha_insercion", "estado"],
-            additionalProperties: false,
-            properties: {
-                _id: {
-                    bsonType: "objectId"
-                },
-                descrip_marca: {
-                    bsonType: "string",
-                    maxLength: 35
-                },
-                marca_id: {
-                    bsonType: "objectId",
-                },
-                fecha_insercion: {
-                    bsonType: "date"
-                },
-                estado: {
-                    bsonType: "int",
-                    minimum: 0,
-                    maximum: 1
-                }
-            }
-        }
-    }
+//db.modelos.drop();
+db.modelos.insertOne({
+    descrip_modelo: "XS",
+    marca_id: {"$oid":"655e6dbc726f38ae3cce5dc3"},
+    fecha_insercion: "",
+    estado: 1
 });

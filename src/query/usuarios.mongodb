@@ -1,2 +1,10 @@
 use("web_gestion");
 //db.usuarios.drop();
+db.usuarios.insertOne({
+    _id:{"$oid":"654aa6f819bd8e49753ddde2"},
+    nombre_usuario:"admin",
+    contrasennia_usuario: "$2a$12$sMCNlcMY78x.KzAsOLJya.4jpszjdwzfGXRnatx6oN3QycOxqW0Ee",
+    tipo:"admin",
+    fecha_insercion:"2019-03-11T04:00:00.000+00:00",
+    estado: 1
+});

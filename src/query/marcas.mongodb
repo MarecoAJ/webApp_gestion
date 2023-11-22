@@ -1,2 +1,8 @@
 use("web_gestion");
 //db.usuarios.drop();
+db.marcas.insertOne({
+    _id:{"$oid":"655e6dbc726f38ae3cce5dc3"},
+    descrip_marca:"IPHONE",
+    fecha_insercion:"2019-03-11T04:00:00.000+00:00",
+    estado:1
+});
