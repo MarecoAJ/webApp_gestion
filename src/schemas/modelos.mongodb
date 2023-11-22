@@ -10,7 +10,7 @@ db.getCollection("modelos", {
                 _id: {
                     bsonType: "objectId"
                 },
-                descrip_marca: {
+                descrip_modelo: {
                     bsonType: "string",
                     maxLength: 35
                 },

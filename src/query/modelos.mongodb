@@ -3,6 +3,6 @@ use("web_gestion");
 db.modelos.insertOne({
     descrip_modelo: "XS",
     marca_id: {"$oid":"655e6dbc726f38ae3cce5dc3"},
-    fecha_insercion: "",
+    fecha_insercion: "2019-03-11T04:00:00.000Z",
     estado: 1
 });
