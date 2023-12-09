@@ -1,0 +1,39 @@
+use("web_gestion");
+
+db.getCollection("productos", {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["_id", "descrip_produc", "modelo_id", "cant_produc", "min_cant_produc",  "fecha_insercion", "estado"],
+            additionalProperties: false,
+            properties: {
+                _id: {
+                    bsonType: "objectId"
+                },
+                descrip_produc: {
+                    bsonType: "string",
+                    maxLength: 35
+                },
+                modelo_id: {
+                    bsonType: "objectId",
+                },
+                cant_produc: {
+                    bsonType: "int",
+                    minimum: 0
+                },
+                min_cant_produc: {
+                    bsonType: "int",
+                    minimum: 1
+                },
+                fecha_insercion: {
+                    bsonType: "date"
+                },
+                estado: {
+                    bsonType: "int",
+                    minimum: 0,
+                    maximum: 1
+                }
+            }
+        }
+    }
+});

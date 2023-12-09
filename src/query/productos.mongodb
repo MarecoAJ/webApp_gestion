@@ -1,0 +1,10 @@
+use("web_gestion");
+//db.productos.drop();
+db.productos.insertOne({
+    descrip_produc: "IPHONE XS",
+    modelo_id: {"$oid":"655e75b5304bcac89aa9b8e2"},
+    cant_produc: 10,
+    min_cant_produc: 2,
+    fecha_insercion: "2019-03-11T04:00:00.000Z",
+    estado: 1
+});
